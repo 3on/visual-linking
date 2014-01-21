@@ -41,11 +41,24 @@ exports.Linking = Component.specialize(/** @lends Linking# */ {
     },
     draw: {
         value: function () {
-            var mid = {x: (this.to.x - this.from.x)/2 , y: (this.to.y - this.from.y)/2};
+            var mid = {
+                x: this.from.x + (this.to.x - this.from.x)/2 ,
+                y: this.from.y + (this.to.y - this.from.y)/2
+            };
+            var dist = Math.sqrt( Math.pow(this.to.x - this.from.x, 2)+ Math.pow(this.to.y - this.from.y, 2) );
+            var c1 = {
+                x: this.from.x + (mid.x - this.from.x)/2 + dist /4,
+                y: this.from.y + (mid.y - this.from.y)/2 - dist /4
+            };
             
             var path = "M ";
+            // move to start point
             path += this.from.x + " "+ this.from.y;
-            path += " L ";
+            // define control point
+            path += " Q ";
+            path += c1.x + " " + c1.y + ", ";
+            path += mid.x + " " + mid.y;
+            path += " T ";
             path += this.to.x + " "+ this.to.y;
             this.path.setAttribute("d", path);
         }
