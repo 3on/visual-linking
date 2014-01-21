@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="linking.css">
+    <script type="text/montage-serialization">
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "linking"},
+                "path": {"#": "path"}
+            },
+            "bindings": {
+                "classList.has('disabled')": {"<-": "!@owner.visible"}
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <div data-montage-id="linking" class="Linking">
+        <svg>
+            <path data-montage-id="path" fill="red" stroke="black"/>
+        </svg>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>
+        Main
+    </title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script type="text/montage-serialization">
+    {
+        "owner": {
+            "prototype": "ui/main.reel",
+            "properties": {
+                "element": {"#": "main"},
+                "linking": {"@": "linkingOverlay"},
+                "start": {"@": "start"},
+                "finish": {"@": "finish"}
+            }
+        },
+        "finish": {
+            "prototype": "digit/ui/radio-button.reel",
+            "properties": {
+                "element": {"#": "finish"},
+                "checked": true
+            }
+        },
+        "linkingOverlay": {
+            "prototype": "ui/linking.reel",
+            "properties": {
+                "element": {"#": "linkingOverlay"}
+            }
+        },
+        "start": {
+            "prototype": "digit/ui/radio-button.reel",
+            "properties": {
+                "element": {"#": "start"},
+                "checked": true
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <div data-montage-id="main" data-montage-skin="light" class="Main">
+        <div data-montage-id="linkingOverlay"></div>
+        <input type="radio" data-montage-id="start" id="start">
+        <input type="radio" data-montage-id="finish" id="finish">
+    </div>
+</body>
+</html>
